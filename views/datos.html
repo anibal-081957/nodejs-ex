@@ -12,8 +12,11 @@
     </hgroup>
     <div class="row">
         <section class='col-xs-12 col-sm-6 col-md-6'>
-            <p><%= mess %></p>
-            <p><%= datos[0].date %></p>
+            <p><%= mess %>
+            <ul>
+                <% for(var i=0; i < datos.length; i ++ ) {%><li><%= datos[i].date %></li> <%}%>
+            </ul>
+
 
 
         </section>
