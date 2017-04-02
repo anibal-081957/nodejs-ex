@@ -98,7 +98,7 @@ app.get('/datos', function (req, res) {
         // Create a document with request IP and current time of request
         //col.insert({ip: req.ip, date: Date.now()});
         col.find(function(err, datos){
-            res.render('datos.html', { mess: "esto es una prueba", datos: datos });
+            res.render('datos.html', { mess: "esto es una prueba", datos: JSON.stringify(datos) });
         });
     } else {
         res.render('datos.html', { mess : "no hay datos"});
