@@ -97,13 +97,10 @@ app.get('/datos', function (req, res) {
         var col = db.collection('counts');
         // Create a document with request IP and current time of request
         //col.insert({ip: req.ip, date: Date.now()});
-        col.find(function(err, datos){
-            res.render('datos.html', { mess: "esto es una prueba", datos: datos });
-        });
-    } else {
-        res.render('datos.html', { mess : "no hay datos"});
-    }
+        var datos = col.find({});
+        res.render('datos.html', {mess: "esto es una prueba", datos: datos});
 
+    }
   //res.render('datos.html', { datos: "esto es una prueba"});
 });
 //fin de mi codigo
