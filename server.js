@@ -97,7 +97,7 @@ app.get('/datos', function (req, res) {
         var col = db.collection('counts');
         // Create a document with request IP and current time of request
         //col.insert({ip: req.ip, date: Date.now()});
-        var datos = col.find({});
+        var datos = col.find({}).toArray();
         res.render('datos.html', {mess: "esto es una prueba", datos: datos});
 
     }
